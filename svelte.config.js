@@ -9,6 +9,9 @@ const config = {
   // for more information about preprocessors
   preprocess: [preprocess(), mdsvex(mdSvexconfig)],
   extensions: ['.svelte', ...mdSvexconfig.extensions],
+  prerender: {
+    default: true
+  },
 
   kit: {
     // hydrate the <div id="svelte"> element in src/app.html
@@ -22,7 +25,6 @@ const config = {
         }
       }
     },
-    target: '#svelte',
     adapter: adapter({
       // default options are shown
       pages: 'build',
