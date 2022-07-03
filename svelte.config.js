@@ -25,6 +25,9 @@ const config = {
         }
       },
     },
+    files: {
+      assets: "static"
+    },
     adapter: adapter({
       // default options are shown
       pages: 'build',
