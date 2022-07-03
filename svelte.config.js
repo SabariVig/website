@@ -9,12 +9,12 @@ const config = {
   // for more information about preprocessors
   preprocess: [preprocess(), mdsvex(mdSvexconfig)],
   extensions: ['.svelte', ...mdSvexconfig.extensions],
-  prerender: {
-    default: true
-  },
 
   kit: {
     // hydrate the <div id="svelte"> element in src/app.html
+    prerender: {
+      default: true
+    },
     vite: {
       server: {
         fs: {
@@ -23,7 +23,7 @@ const config = {
             'posts'
           ]
         }
-      }
+      },
     },
     adapter: adapter({
       // default options are shown
