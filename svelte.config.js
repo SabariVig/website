@@ -10,19 +10,20 @@ const config = {
   preprocess: [preprocess(), mdsvex(mdSvexconfig)],
   extensions: ['.svelte', ...mdSvexconfig.extensions],
 
+
   kit: {
-    // hydrate the <div id="svelte"> element in src/app.html
+    prerender: {
+      default: true
+    },
     vite: {
       server: {
         fs: {
           allow: [
-            // your custom rules
             'posts'
           ]
         }
       }
     },
-    target: '#svelte',
     adapter: adapter({
       // default options are shown
       pages: 'build',
